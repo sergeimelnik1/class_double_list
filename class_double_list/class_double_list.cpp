@@ -1,8 +1,8 @@
 #include "iostream"
 #include "class_double_list.h"
 
-struct Node *createlist(int data){
-    Node*n = new Node;
+void *createlist(int data){
+    Node *n = new Node;
     n->data = data;
     n->next = NULL;
     n->prev = NULL;
@@ -18,14 +18,14 @@ void printlist(struct Node *first){
     cout << endl;
 }
 
-struct Node * search(Node*node, int val){
+void * search(Node*node, int val){
     while (node != NULL && node->data != val){
         node = node->next;
     }
     return node;
 }
 
-struct Node * addToend(Node*lst, int number){
+void * addToend(Node*lst, int number){
     struct Node *temp, *p;
     temp = new Node;
     p = lst->next;
@@ -39,7 +39,7 @@ struct Node * addToend(Node*lst, int number){
     return temp;
 }
 
-struct Node * addTobegin(Node*lst, int number){
+void * addTobegin(Node*lst, int number){
     Node*n = new Node;
     n->next = lst;
     n->prev = NULL;
@@ -48,7 +48,7 @@ struct Node * addTobegin(Node*lst, int number){
     return n;
 }
 
-struct Node *deletehead(Node*root){
+void *deletehead(Node*root){
     struct Node*temp;
     temp = root->next;
     temp->prev = NULL;
@@ -56,7 +56,7 @@ struct Node *deletehead(Node*root){
     return temp;
 }
 
-struct Node *deletend(Node*root){
+void *deletend(Node*root){
     struct Node*temp;
     temp = root->prev;
     temp->next = NULL;

@@ -11,14 +11,14 @@ struct Node{
     Node* head, tail;
     
 public:
-struct Node *createlist(int data);
+void *createlist(int data);
 void printlist(struct Node *first);
-struct Node * addTobegin(Node*lst, int number);
-struct Node * addToend(Node*lst, int number);
+void * addTobegin(Node*lst, int number);
+void * addToend(Node*lst, int number);
 void addTomiddle(List**lst, int number, int after);
 void deleteElem(List**lst,int number);
-struct Node *deletehead(Node*root);
-struct Node *deletend(Node*root);
-struct Node * search(Node*node, int val);
+void *deletehead(Node*root);
+void *deletend(Node*root);
+void * search(Node*node, int val);
 void sort(Node**head);
 };
