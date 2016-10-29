@@ -1,34 +1,26 @@
-#include "iostream"
-#include "class_double_list.h"
+#include "stdafx.h"
+#include "double_linked_list.h"
 
 
-int main(){
-    List*head, *cur;
-    int num;
-    cout << "a=  ";
-    cin >> num;
-    head = createlist(num);
-    cur = head;
-    for (int i = 0; i < 9; i++) {
-        cout << "a = ";
-        cin >> num;
-        cur = addToend(cur, num);
-    }
-    printlist(head);
-    cout << endl;
-    // Удаляем элемент со значением 3
-    deleteElem(&head, 3);
-    printlist(head);
-    cout << endl;
-    //Добавление элемента co значением 4 после элемента со значением 6
-    addTomiddle(&head, 4, 6);
-    printlist(head);
-    cout << endl;
-    // Сортировка элементов по возрастанию
-    sort(&head);
-    printlist(head);
-
-    
+int main()
+{
+	int num;
+	double_linked_list list;
+	for (int i = 1; i < 10; i++){
+		cout << "a= ";
+		cin >> num;
+		list.append(num);
+	}
+	list.printlist();
+	//Удаляем элемент со значением 4;
+	list.deleteElem(4);
+	list.printlist();
+	//Добавление элемента со значением 9 после 5;
+	list.insert(9, 5);
+	list.printlist();
+	//Сортировка списка по возрастанию
+	list.sort();
+	list.printlist();
+	system("pause");
     return 0;
 }
-
